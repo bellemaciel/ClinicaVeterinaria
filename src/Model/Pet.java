@@ -1,19 +1,13 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package Model;
 
-/**
- *
- * @author aluno
- */
+
 public class Pet {
     private static int cont;
     private int id;
     private String nome;
     private int idade;
-    private char sexo;
+    private String sexo;
     private String especie;
     private Cliente cliente;
     
@@ -22,13 +16,22 @@ public class Pet {
         this.id = Pet.cont;
     }
     
-    public Pet(Cliente cliente, String especie, String nome, int idade, char sexo) {
+    public Pet(Cliente cliente, String especie, String nome, int idade, String sexo) {
         Pet.cont++;
         this.id = Pet.cont;
         this.cliente = cliente;
         this.especie = especie;
         this.nome = nome;
         this.idade = idade;
+        this.sexo = sexo;
+    }
+    
+    public Pet(Cliente cliente, String especie, String nome, String sexo) {
+        Pet.cont++;
+        this.id = Pet.cont;
+        this.cliente = cliente;
+        this.especie = especie;
+        this.nome = nome;
         this.sexo = sexo;
     }
 
@@ -52,11 +55,11 @@ public class Pet {
         this.idade = idade;
     }
 
-    public char getSexo() {
+    public String getSexo() {
         return sexo;
     }
 
-    public void setSexo(char sexo) {
+    public void setSexo(String sexo) {
         this.sexo = sexo;
     }
 

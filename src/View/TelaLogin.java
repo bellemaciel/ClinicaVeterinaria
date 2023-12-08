@@ -61,14 +61,14 @@ public class TelaLogin extends javax.swing.JFrame {
                         this.dispose();
                         
                     }else{
-                        JOptionPane.showMessageDialog(this.painel_principal, "Usuario ou senha incorreto!");
+                        JOptionPane.showMessageDialog(this.painel, "Usuario ou senha incorreto!");
                     }
                     
                 } else {
-                    JOptionPane.showMessageDialog(this.painel_principal, "Favor, preencher o campo senha!", "CAMPO VAZIO", JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(this.painel, "Favor, preencher o campo senha!", "CAMPO VAZIO", JOptionPane.ERROR_MESSAGE);
                 }
             } else {
-                JOptionPane.showMessageDialog(this.painel_principal, "Favor, preencher o campo colaborador!", "CAMPO VAZIO", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(this.painel, "Favor, preencher o campo colaborador!", "CAMPO VAZIO", JOptionPane.ERROR_MESSAGE);
             }
         } catch (Exception e) {
 
@@ -88,6 +88,7 @@ public class TelaLogin extends javax.swing.JFrame {
         txt_nome = new javax.swing.JTextField();
         jButton2 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
+        painel = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("PetPlus - LOGIN");
@@ -127,6 +128,7 @@ public class TelaLogin extends javax.swing.JFrame {
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/login.png"))); // NOI18N
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 650));
+        getContentPane().add(painel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 980, 570));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -181,6 +183,7 @@ public class TelaLogin extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JPanel painel;
     private javax.swing.JTextField txt_nome;
     private javax.swing.JTextField txt_senha;
     // End of variables declaration//GEN-END:variables

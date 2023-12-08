@@ -1,30 +1,48 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package View;
 
-/**
- *
- * @author isabe
- */
+import Model.Atendimento;
+import Model.Cliente;
+import Model.Pet;
+import Model.Procedimento;
+import Model.Produto;
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+
+
 public class cadastroPet extends javax.swing.JFrame {
 
-    /**
-     * Creates new form cadastroPet
-     */
-    public cadastroPet() {
+    private ArrayList<Atendimento> atendimento = new ArrayList<>();
+    private ArrayList<Cliente> cliente = new ArrayList<>();
+    private ArrayList<Pet> pet = new ArrayList<>();
+    private ArrayList<Produto> produto = new ArrayList<>();
+    private ArrayList<Procedimento> procedimento = new ArrayList<>();
+    
+    
+    public cadastroPet(ArrayList<Atendimento> atendimento, ArrayList<Cliente> cliente, ArrayList<Pet> pet, ArrayList<Produto> produto, ArrayList<Procedimento> procedimento) {
+        
         initComponents();
-        jTextField3.setOpaque(false);
-        jTextField3.setBackground(new java.awt.Color(0,0,0,1));
-        jTextField4.setOpaque(false);
-        jTextField4.setBackground(new java.awt.Color(0,0,0,1));
-        jTextField5.setOpaque(false);
-        jTextField5.setBackground(new java.awt.Color(0,0,0,1));
-        jTextField6.setOpaque(false);
-        jTextField6.setBackground(new java.awt.Color(0,0,0,1));
-        jTextField7.setOpaque(false);
-        jTextField7.setBackground(new java.awt.Color(0,0,0,1));
+        
+        this.atendimento = atendimento;
+        this.cliente = cliente;
+        this.pet = pet;
+        this.produto = produto;
+        this.procedimento = procedimento;
+        
+        dono.setOpaque(false);
+        dono.setBackground(new java.awt.Color(0,0,0,1));
+        especie.setOpaque(false);
+        especie.setBackground(new java.awt.Color(0,0,0,1));
+        sexo.setOpaque(false);
+        sexo.setBackground(new java.awt.Color(0,0,0,1));
+        idade.setOpaque(false);
+        idade.setBackground(new java.awt.Color(0,0,0,1));
+        nome.setOpaque(false);
+        nome.setBackground(new java.awt.Color(0,0,0,1));
+    }
+    
+    private cadastroPet() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     /**
@@ -36,14 +54,14 @@ public class cadastroPet extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
-        jTextField6 = new javax.swing.JTextField();
-        jTextField7 = new javax.swing.JTextField();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        dono = new javax.swing.JTextField();
+        especie = new javax.swing.JTextField();
+        sexo = new javax.swing.JTextField();
+        idade = new javax.swing.JTextField();
+        nome = new javax.swing.JTextField();
+        apagar = new javax.swing.JButton();
+        confirma = new javax.swing.JButton();
+        voltar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -51,88 +69,88 @@ public class cadastroPet extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jTextField3.setBackground(new java.awt.Color(242, 242, 242));
-        jTextField3.setFont(new java.awt.Font("Yu Gothic", 1, 18)); // NOI18N
-        jTextField3.setBorder(null);
-        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+        dono.setBackground(new java.awt.Color(242, 242, 242));
+        dono.setFont(new java.awt.Font("Yu Gothic", 1, 18)); // NOI18N
+        dono.setBorder(null);
+        dono.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField3ActionPerformed(evt);
+                donoActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 440, 380, 40));
+        getContentPane().add(dono, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 440, 380, 40));
 
-        jTextField4.setBackground(new java.awt.Color(242, 242, 242));
-        jTextField4.setFont(new java.awt.Font("Yu Gothic", 1, 18)); // NOI18N
-        jTextField4.setBorder(null);
-        jTextField4.addActionListener(new java.awt.event.ActionListener() {
+        especie.setBackground(new java.awt.Color(242, 242, 242));
+        especie.setFont(new java.awt.Font("Yu Gothic", 1, 18)); // NOI18N
+        especie.setBorder(null);
+        especie.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField4ActionPerformed(evt);
+                especieActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 360, 260, 40));
+        getContentPane().add(especie, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 360, 260, 40));
 
-        jTextField5.setBackground(new java.awt.Color(242, 242, 242));
-        jTextField5.setFont(new java.awt.Font("Yu Gothic", 1, 18)); // NOI18N
-        jTextField5.setBorder(null);
-        jTextField5.addActionListener(new java.awt.event.ActionListener() {
+        sexo.setBackground(new java.awt.Color(242, 242, 242));
+        sexo.setFont(new java.awt.Font("Yu Gothic", 1, 18)); // NOI18N
+        sexo.setBorder(null);
+        sexo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField5ActionPerformed(evt);
+                sexoActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 290, 380, 40));
+        getContentPane().add(sexo, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 290, 380, 40));
 
-        jTextField6.setBackground(new java.awt.Color(242, 242, 242));
-        jTextField6.setFont(new java.awt.Font("Yu Gothic", 1, 18)); // NOI18N
-        jTextField6.setBorder(null);
-        jTextField6.addActionListener(new java.awt.event.ActionListener() {
+        idade.setBackground(new java.awt.Color(242, 242, 242));
+        idade.setFont(new java.awt.Font("Yu Gothic", 1, 18)); // NOI18N
+        idade.setBorder(null);
+        idade.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField6ActionPerformed(evt);
+                idadeActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 230, 120, 40));
+        getContentPane().add(idade, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 230, 120, 40));
 
-        jTextField7.setBackground(new java.awt.Color(242, 242, 242));
-        jTextField7.setFont(new java.awt.Font("Yu Gothic", 1, 18)); // NOI18N
-        jTextField7.setBorder(null);
-        jTextField7.addActionListener(new java.awt.event.ActionListener() {
+        nome.setBackground(new java.awt.Color(242, 242, 242));
+        nome.setFont(new java.awt.Font("Yu Gothic", 1, 18)); // NOI18N
+        nome.setBorder(null);
+        nome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField7ActionPerformed(evt);
+                nomeActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 160, 380, 40));
+        getContentPane().add(nome, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 160, 380, 40));
 
-        jButton2.setBorder(null);
-        jButton2.setBorderPainted(false);
-        jButton2.setContentAreaFilled(false);
-        jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        apagar.setBorder(null);
+        apagar.setBorderPainted(false);
+        apagar.setContentAreaFilled(false);
+        apagar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        apagar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                apagarActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 520, 130, 40));
+        getContentPane().add(apagar, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 520, 130, 40));
 
-        jButton3.setBorder(null);
-        jButton3.setBorderPainted(false);
-        jButton3.setContentAreaFilled(false);
-        jButton3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        confirma.setBorder(null);
+        confirma.setBorderPainted(false);
+        confirma.setContentAreaFilled(false);
+        confirma.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        confirma.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                confirmaActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 520, 130, 40));
+        getContentPane().add(confirma, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 520, 130, 40));
 
-        jButton4.setBorder(null);
-        jButton4.setBorderPainted(false);
-        jButton4.setContentAreaFilled(false);
-        jButton4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        voltar.setBorder(null);
+        voltar.setBorderPainted(false);
+        voltar.setContentAreaFilled(false);
+        voltar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        voltar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                voltarActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 520, 120, 40));
+        getContentPane().add(voltar, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 520, 120, 40));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/cadastroPet.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -140,37 +158,73 @@ public class cadastroPet extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+    private void donoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_donoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField3ActionPerformed
+    }//GEN-LAST:event_donoActionPerformed
 
-    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
+    private void especieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_especieActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField4ActionPerformed
+    }//GEN-LAST:event_especieActionPerformed
 
-    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
+    private void sexoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sexoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField5ActionPerformed
+    }//GEN-LAST:event_sexoActionPerformed
 
-    private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField6ActionPerformed
+    private void idadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_idadeActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField6ActionPerformed
+    }//GEN-LAST:event_idadeActionPerformed
 
-    private void jTextField7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField7ActionPerformed
+    private void nomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nomeActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField7ActionPerformed
+    }//GEN-LAST:event_nomeActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    private void apagarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_apagarActionPerformed
+         String t = "";
+        sexo.setText(t);
+        nome.setText(t);
+        idade.setText(t);
+        especie.setText(t);
+        
+        dono.setEnabled(true);
+        this.confirma.setEnabled(true);
+    }//GEN-LAST:event_apagarActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+    private void confirmaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmaActionPerformed
+    if (!(nome.getText().isEmpty() || dono.getText().isEmpty() || sexo.getText().isEmpty() || especie.getText().isEmpty() || idade.getText().isEmpty())) {
+            //Verifica se tem o dono na lista de cliente
+            Cliente atual = null;
+            boolean achou = false;
+            for (int x = 0; x < cliente.size(); x++) {
+                if (cliente.get(x).getNome().equalsIgnoreCase(dono.getText())) {
+                    achou = true;
+                    atual = cliente.get(x);
+                    break;
+                }
+            }
+            if (achou) {
+                pet.add(new Pet(atual, nome.getText(), especie.getText(), sexo.getText()));
+                String t = "";
+                dono.setText(t);
+                nome.setText(t);
+                especie.setText(t);
+                sexo.setText(t);
+                
+                
+                JOptionPane.showMessageDialog(this, "Pet cadastrado!", "CADASTRO", JOptionPane.INFORMATION_MESSAGE);
+                
+            } else {
+                JOptionPane.showMessageDialog(this, "Dono do PET não é um cliente\ncadastrado no sistema!", "NÃO CADASTRADO", JOptionPane.WARNING_MESSAGE);
+            }
+        } else {
+            JOptionPane.showMessageDialog(this, "Favor preencher todos os campos", "VAZIO", JOptionPane.WARNING_MESSAGE);
+        }
+    }//GEN-LAST:event_confirmaActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
+    private void voltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_voltarActionPerformed
+        Menu tela = new Menu(atendimento, cliente, pet, produto, procedimento);
+        tela.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_voltarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -208,14 +262,14 @@ public class cadastroPet extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
+    private javax.swing.JButton apagar;
+    private javax.swing.JButton confirma;
+    private javax.swing.JTextField dono;
+    private javax.swing.JTextField especie;
+    private javax.swing.JTextField idade;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
+    private javax.swing.JTextField nome;
+    private javax.swing.JTextField sexo;
+    private javax.swing.JButton voltar;
     // End of variables declaration//GEN-END:variables
 }

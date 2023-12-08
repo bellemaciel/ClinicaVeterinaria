@@ -1,8 +1,11 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package View;
+
+import Model.Cliente;
+import Model.Pet;
+import Model.Procedimento;
+import Model.Produto;
+import java.util.ArrayList;
 
 /**
  *
@@ -10,23 +13,26 @@ package View;
  */
 public class Atendimento extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Atendimento
-     */
+    private ArrayList<Model.Atendimento> atendimento = new ArrayList<>();
+    private ArrayList<Cliente> cliente = new ArrayList<>();
+    private ArrayList<Pet> pet = new ArrayList<>();
+    private ArrayList<Produto> produto = new ArrayList<>();
+    private ArrayList<Procedimento> procedimento = new ArrayList<>();
+   
     public Atendimento() {
         initComponents();
-        jTextField2.setOpaque(false);
-        jTextField2.setBackground(new java.awt.Color(0,0,0,1));
-        jTextField3.setOpaque(false);
-        jTextField3.setBackground(new java.awt.Color(0,0,0,1));
-        jTextField4.setOpaque(false);
-        jTextField4.setBackground(new java.awt.Color(0,0,0,1));
-        jTextField5.setOpaque(false);
-        jTextField5.setBackground(new java.awt.Color(0,0,0,1));
-        jTextField6.setOpaque(false);
-        jTextField6.setBackground(new java.awt.Color(0,0,0,1));
+        pet.setOpaque(false);
+        pet.setBackground(new java.awt.Color(0,0,0,1));
+        cliente.setOpaque(false);
+        cliente.setBackground(new java.awt.Color(0,0,0,1));
+        procedimento.setOpaque(false);
+        procedimento.setBackground(new java.awt.Color(0,0,0,1));
+        produto.setOpaque(false);
+        produto.setBackground(new java.awt.Color(0,0,0,1));
+        data.setOpaque(false);
+        data.setBackground(new java.awt.Color(0,0,0,1));
          
-         jTextField6.setText(String.valueOf("MOSTRAR TEXTO"));
+         data.setText(String.valueOf("MOSTRAR TEXTO"));
         
         
         
@@ -41,13 +47,13 @@ public class Atendimento extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton2 = new javax.swing.JButton();
-        jTextField6 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        voltar = new javax.swing.JButton();
+        data = new javax.swing.JTextField();
+        produto = new javax.swing.JTextField();
+        procedimento = new javax.swing.JTextField();
+        pet = new javax.swing.JTextField();
+        cliente = new javax.swing.JTextField();
+        confirma = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -55,76 +61,76 @@ public class Atendimento extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton2.setBorder(null);
-        jButton2.setBorderPainted(false);
-        jButton2.setContentAreaFilled(false);
-        jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        voltar.setBorder(null);
+        voltar.setBorderPainted(false);
+        voltar.setContentAreaFilled(false);
+        voltar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        voltar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                voltarActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 530, 120, 30));
+        getContentPane().add(voltar, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 530, 120, 30));
 
-        jTextField6.setBackground(new java.awt.Color(242, 242, 242));
-        jTextField6.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jTextField6.setBorder(null);
-        jTextField6.addActionListener(new java.awt.event.ActionListener() {
+        data.setBackground(new java.awt.Color(242, 242, 242));
+        data.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        data.setBorder(null);
+        data.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField6ActionPerformed(evt);
+                dataActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 450, 400, 40));
+        getContentPane().add(data, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 450, 400, 40));
 
-        jTextField5.setBackground(new java.awt.Color(242, 242, 242));
-        jTextField5.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jTextField5.setBorder(null);
-        jTextField5.addActionListener(new java.awt.event.ActionListener() {
+        produto.setBackground(new java.awt.Color(242, 242, 242));
+        produto.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        produto.setBorder(null);
+        produto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField5ActionPerformed(evt);
+                produtoActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 390, 370, 40));
+        getContentPane().add(produto, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 390, 370, 40));
 
-        jTextField4.setBackground(new java.awt.Color(242, 242, 242));
-        jTextField4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jTextField4.setBorder(null);
-        jTextField4.addActionListener(new java.awt.event.ActionListener() {
+        procedimento.setBackground(new java.awt.Color(242, 242, 242));
+        procedimento.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        procedimento.setBorder(null);
+        procedimento.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField4ActionPerformed(evt);
+                procedimentoActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 320, 320, 40));
+        getContentPane().add(procedimento, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 320, 320, 40));
 
-        jTextField2.setBackground(new java.awt.Color(242, 242, 242));
-        jTextField2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jTextField2.setBorder(null);
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        pet.setBackground(new java.awt.Color(242, 242, 242));
+        pet.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        pet.setBorder(null);
+        pet.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                petActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 250, 420, 40));
+        getContentPane().add(pet, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 250, 420, 40));
 
-        jTextField3.setBackground(new java.awt.Color(242, 242, 242));
-        jTextField3.setFont(new java.awt.Font("Yu Gothic", 1, 18)); // NOI18N
-        jTextField3.setBorder(null);
-        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+        cliente.setBackground(new java.awt.Color(242, 242, 242));
+        cliente.setFont(new java.awt.Font("Yu Gothic", 1, 18)); // NOI18N
+        cliente.setBorder(null);
+        cliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField3ActionPerformed(evt);
+                clienteActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 190, 380, 40));
+        getContentPane().add(cliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 190, 380, 40));
 
-        jButton1.setBorder(null);
-        jButton1.setContentAreaFilled(false);
-        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        confirma.setBorder(null);
+        confirma.setContentAreaFilled(false);
+        confirma.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        confirma.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                confirmaActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 530, 110, 30));
+        getContentPane().add(confirma, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 530, 110, 30));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/atendimento.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -132,33 +138,33 @@ public class Atendimento extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void petActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_petActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_petActionPerformed
 
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+    private void clienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clienteActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField3ActionPerformed
+    }//GEN-LAST:event_clienteActionPerformed
 
-    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
+    private void procedimentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_procedimentoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField4ActionPerformed
+    }//GEN-LAST:event_procedimentoActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void confirmaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_confirmaActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void voltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_voltarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_voltarActionPerformed
 
-    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
+    private void produtoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_produtoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField5ActionPerformed
+    }//GEN-LAST:event_produtoActionPerformed
 
-    private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField6ActionPerformed
+    private void dataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dataActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField6ActionPerformed
+    }//GEN-LAST:event_dataActionPerformed
 
     /**
      * @param args the command line arguments
@@ -196,13 +202,13 @@ public class Atendimento extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JTextField cliente;
+    private javax.swing.JButton confirma;
+    private javax.swing.JTextField data;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
+    private javax.swing.JTextField pet;
+    private javax.swing.JTextField procedimento;
+    private javax.swing.JTextField produto;
+    private javax.swing.JButton voltar;
     // End of variables declaration//GEN-END:variables
 }
