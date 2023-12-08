@@ -142,7 +142,7 @@ public class TelaLogin extends javax.swing.JFrame {
     }//GEN-LAST:event_txt_nomeActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+        this.entrar();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**

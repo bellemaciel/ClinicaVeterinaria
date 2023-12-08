@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package View;
 
 /**
@@ -9,12 +6,18 @@ package View;
  * @author isabe
  */
 public class fatura extends javax.swing.JFrame {
-
-    /**
-     * Creates new form fatura
-     */
-    public fatura() {
+     private double valor;
+    private String data;
+    private static int num;
+    private int numeroAtendimento;
+    
+    public fatura(double valor, String data) {
         initComponents();
+         this.num++;
+        this.numeroAtendimento = this.num;
+        this.valor = valor;
+        this.data = data;
+        
          jTextField3.setOpaque(false);
         jTextField3.setBackground(new java.awt.Color(0,0,0,1));
         jTextField4.setOpaque(false);
@@ -23,6 +26,10 @@ public class fatura extends javax.swing.JFrame {
         jTextField5.setBackground(new java.awt.Color(0,0,0,1));
         jTextField6.setOpaque(false);
         jTextField6.setBackground(new java.awt.Color(0,0,0,1));
+    }
+    
+     private fatura() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     /**

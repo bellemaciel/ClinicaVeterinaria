@@ -22,7 +22,7 @@ public class Procedimentos extends javax.swing.JFrame {
     
     public Procedimentos(ArrayList<Model.Atendimento> atendimento, ArrayList<Cliente> cliente, ArrayList<Pet> pet, ArrayList<Produto> produto, ArrayList<Procedimento> procedimento) {
         initComponents();
-         this.atendimento = atendimento;
+        this.atendimento = atendimento;
         this.cliente = cliente;
         this.pet = pet;
         this.produto = produto;

@@ -18,12 +18,12 @@ public class ClinicaVeterinaria {
         ArrayList<Cliente> cliente = new ArrayList<>();
         ArrayList<Pet> pet = new ArrayList<>();
         ArrayList<Produto> produto = new ArrayList<>();
-        String raca = null;
-        ArrayList<Procedimento> servico = new ArrayList<>();
+       
+        ArrayList<Procedimento> procedimento = new ArrayList<>();
         ArrayList<Colaborador> usuario = new ArrayList<>();
-        usuario.add(new Colaborador("admin", "admin"));
+        usuario.add(new Colaborador("admin", "123"));
 
-        TelaLogin tela = new TelaLogin(usuario, atendimento, cliente, pet, produto, raca, servico);
+        TelaLogin tela = new TelaLogin(usuario, atendimento, cliente, pet, produto, procedimento);
         tela.setVisible(true);
     }
     

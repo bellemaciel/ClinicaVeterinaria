@@ -206,15 +206,15 @@ public class Menu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void cad_prodActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cad_prodActionPerformed
-        // TODO add your handling code here:
+        this.cadastrarProcedimento();
     }//GEN-LAST:event_cad_prodActionPerformed
 
     private void cad_clienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cad_clienteActionPerformed
-        // TODO add your handling code here:
+       this.cadastrarCliente();
     }//GEN-LAST:event_cad_clienteActionPerformed
 
     private void cad_produtoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cad_produtoActionPerformed
-        // TODO add your handling code here:
+        this.cadastrarProduto();
     }//GEN-LAST:event_cad_produtoActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
@@ -222,15 +222,15 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void cad_atendimentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cad_atendimentoActionPerformed
-        // TODO add your handling code here:
+        this.atendimento();
     }//GEN-LAST:event_cad_atendimentoActionPerformed
 
     private void edit_petActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edit_petActionPerformed
-        // TODO add your handling code here:
+       this.cadastrarPet();
     }//GEN-LAST:event_edit_petActionPerformed
 
     private void sairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sairActionPerformed
-        // TODO add your handling code here:
+        this.sair();
     }//GEN-LAST:event_sairActionPerformed
 
     private void cad_petActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cad_petActionPerformed
