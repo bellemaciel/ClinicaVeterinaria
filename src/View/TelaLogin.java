@@ -4,21 +4,75 @@
  */
 package View;
 
-/**
- *
- * @author isabe
- */
+import Model.Atendimento;
+import Model.Cliente;
+import Model.Colaborador;
+import Model.Pet;
+import Model.Procedimento;
+import Model.Produto;
+import Model.Fatura;
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+
+
 public class TelaLogin extends javax.swing.JFrame {
 
-    /**
-     * Creates new form TelaLogin
-     */
-    public TelaLogin() {
+    ArrayList<Colaborador> colaborador = new ArrayList<>();
+    private ArrayList<Atendimento> atendimento = new ArrayList<>();
+    private ArrayList<Cliente> cliente = new ArrayList<>();
+    private ArrayList<Pet> pet = new ArrayList<>();
+    private ArrayList<Produto> produto = new ArrayList<>();
+    private ArrayList<Procedimento> procedimento = new ArrayList<>();
+    
+    
+    public TelaLogin(ArrayList<Colaborador> colaborador, ArrayList<Atendimento> atendimento, ArrayList<Cliente> cliente, ArrayList<Pet> pet, ArrayList<Produto> produto, ArrayList<Procedimento> procedimento) {
         initComponents();
-        jTextField3.setOpaque(false);
-        jTextField3.setBackground(new java.awt.Color(0,0,0,1));
-        jTextField4.setOpaque(false);
-        jTextField4.setBackground(new java.awt.Color(0,0,0,1));
+        this.colaborador = colaborador;
+        this.atendimento = atendimento;
+        this.cliente = cliente;
+        this.pet = pet;
+        this.produto = produto;
+        this.procedimento = procedimento;
+        
+        txt_senha.setOpaque(false);
+        txt_senha.setBackground(new java.awt.Color(0,0,0,1));
+        txt_nome.setOpaque(false);
+        txt_nome.setBackground(new java.awt.Color(0,0,0,1));
+    }
+    
+     private TelaLogin() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+     
+      private void entrar() {
+        try {
+            if (!txt_nome.getText().isEmpty()) {
+                if (!txt_senha.getText().isEmpty()) {
+                    int encontrou = -1;
+                    for(int x = 0; x < this.colaborador.size(); x++){
+                        if(this.colaborador.get(x).getLogin().equals(this.txt_nome.getText()) && this.colaborador.get(x).getSenha().equals(this.txt_senha.getText())){
+                            encontrou = x;
+                            break;
+                        }
+                    }
+                    if(encontrou != -1){
+                        Menu tela = new Menu(atendimento, cliente, pet, produto, procedimento);
+                        tela.setVisible(true);
+                        this.dispose();
+                        
+                    }else{
+                        JOptionPane.showMessageDialog(this.painel_principal, "Usuario ou senha incorreto!");
+                    }
+                    
+                } else {
+                    JOptionPane.showMessageDialog(this.painel_principal, "Favor, preencher o campo senha!", "CAMPO VAZIO", JOptionPane.ERROR_MESSAGE);
+                }
+            } else {
+                JOptionPane.showMessageDialog(this.painel_principal, "Favor, preencher o campo colaborador!", "CAMPO VAZIO", JOptionPane.ERROR_MESSAGE);
+            }
+        } catch (Exception e) {
+
+        }
     }
 
     /**
@@ -30,8 +84,8 @@ public class TelaLogin extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
+        txt_senha = new javax.swing.JTextField();
+        txt_nome = new javax.swing.JTextField();
         jButton2 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
 
@@ -40,25 +94,25 @@ public class TelaLogin extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jTextField3.setBackground(new java.awt.Color(242, 242, 242));
-        jTextField3.setFont(new java.awt.Font("Yu Gothic", 1, 18)); // NOI18N
-        jTextField3.setBorder(null);
-        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+        txt_senha.setBackground(new java.awt.Color(242, 242, 242));
+        txt_senha.setFont(new java.awt.Font("Yu Gothic", 1, 18)); // NOI18N
+        txt_senha.setBorder(null);
+        txt_senha.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField3ActionPerformed(evt);
+                txt_senhaActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 320, 320, 40));
+        getContentPane().add(txt_senha, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 320, 320, 40));
 
-        jTextField4.setBackground(new java.awt.Color(242, 242, 242));
-        jTextField4.setFont(new java.awt.Font("Yu Gothic", 1, 18)); // NOI18N
-        jTextField4.setBorder(null);
-        jTextField4.addActionListener(new java.awt.event.ActionListener() {
+        txt_nome.setBackground(new java.awt.Color(242, 242, 242));
+        txt_nome.setFont(new java.awt.Font("Yu Gothic", 1, 18)); // NOI18N
+        txt_nome.setBorder(null);
+        txt_nome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField4ActionPerformed(evt);
+                txt_nomeActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 190, 320, 40));
+        getContentPane().add(txt_nome, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 190, 320, 40));
 
         jButton2.setBorder(null);
         jButton2.setBorderPainted(false);
@@ -77,13 +131,13 @@ public class TelaLogin extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+    private void txt_senhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_senhaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField3ActionPerformed
+    }//GEN-LAST:event_txt_senhaActionPerformed
 
-    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
+    private void txt_nomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_nomeActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField4ActionPerformed
+    }//GEN-LAST:event_txt_nomeActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
@@ -127,7 +181,7 @@ public class TelaLogin extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField txt_nome;
+    private javax.swing.JTextField txt_senha;
     // End of variables declaration//GEN-END:variables
 }
